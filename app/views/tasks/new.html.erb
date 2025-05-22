@@ -1,0 +1,21 @@
+<div class="container mt-5" style="max-width: 600px;">
+  <h1 class="mb-4">New task</h1>
+
+  <%= form_with model: @task, local: true do |form| %>
+    <div class="mb-3">
+      <%= form.label :title, class: "form-label" %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :details, class: "form-label" %>
+      <%= form.text_area :details, class: "form-control", rows: 4 %>
+    </div>
+
+    <%= form.submit "Create Task", class: "btn btn-primary" %>
+  <% end %>
+
+  <div class="mt-4">
+    <%= link_to "Back to list", tasks_path, class: "btn btn-link" %>
+  </div>
+</div>
